@@ -7,10 +7,10 @@ voltage <- as.numeric(setdat$Voltage)
 Metering1 <- as.numeric(setdat$Sub_metering_1)
 Metering2 <- as.numeric(setdat$Sub_metering_2)
 Metering3 <- as.numeric(setdat$Sub_metering_3)
-dev.copy(png, file="plot4.png", height=480, width=480)
-par(nfrow = c(2, 2))
 
-plot(datetime, torpint, type="l", xlab="", ylab="Global Active Power", cex=0.2)
+par(mfrow=c(2,2))
+
+plot(datetime, toprint, type="l", xlab="", ylab="Global Active Power", cex=0.2)
 plot(datetime, voltage, type="l", xlab="datetime", ylab="Voltage")
 
 
@@ -20,4 +20,6 @@ lines(datetime, Metering3, type="l", col="blue")
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
 
 plot(datetime, toprint2, type="l", xlab="datetime", ylab="Global_reactive_power")
+
+dev.copy(png, file="plot4.png", height=480, width=480)
 dev.off()
