@@ -2,8 +2,8 @@ data <- read.table("C:/Users/daniel/Desktop/R course/household_power_consumption
 setdat <- data[data$Date %in% c("1/2/2007","2/2/2007"),]
 datetime <- strptime(paste(setdat$Date, setdat$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 toprint <- as.numeric(setdat$Global_active_power)
-toprint2 <- as.numeric(subSetData$Global_reactive_power)
-voltage <- as.numeric(subSetData$Voltage)
+toprint2 <- as.numeric(setdat$Global_reactive_power)
+voltage <- as.numeric(setdat$Voltage)
 Metering1 <- as.numeric(setdat$Sub_metering_1)
 Metering2 <- as.numeric(setdat$Sub_metering_2)
 Metering3 <- as.numeric(setdat$Sub_metering_3)
